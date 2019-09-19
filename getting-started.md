@@ -50,7 +50,7 @@ To create and configure your VPC and other attached resources:
 1. Create a VPC.
 2. Create subnets in one or more zones. You can create subnets in suggested prefix ranges or in your own IP ranges that you bring to IBM Cloud.
 3. Attach a public gateway if you want to allow all resources in a subnet to communicate with the public internet.
-4. Create generation 2 virtual server instances with the core and RAM configuration that's right for your workload. By default, a 100 GB boot volume is attached to each instance.
+4. Create virtual server instances for VPC with the core and RAM configuration that's right for your workload. By default, a 100 GB boot volume is attached to each instance.
 5. If you want additional storage, create block storage volumes and attach them to your instances.
 1. To define the inbound and outbound traffic that's allowed for instances, configure their security groups.
 1. If you want instances to be reachable from the internet, reserve and associate floating IP addresses.
