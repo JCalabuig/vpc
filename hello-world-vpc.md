@@ -143,7 +143,7 @@ Only one public gateway per zone is allowed in a VPC, but that public gateway ca
 ## Add an SSH key
 {: #add-ssh-key-cli}
 
-Add your public SSH key to your IBM Cloud acccount. This key is speciified when you create the instance, and it's needed later to log into the instance. You can use one key to provision multiple instances.
+Add your public SSH key to your IBM Cloud acccount. This key is specified when you create the instance, and it's needed later to log into the instance. You can use one key to provision multiple instances.
 
 To see the available keys in your IBM Cloud account, run this command:
 
@@ -235,7 +235,7 @@ ibmcloud is volume-profiles
 Run this command to create a block storage data volume. Specify a name for your volume, volume profile, and the zone where you are creating the volume. To attach a block storage data volume to an instance, the instance and the block storage data volume must be created in the same zone.
 
 ```
-ibmcloud is volume-create my-volume custom us-south-2 --iops 1000
+ibmcloud is volume-create my-volume custom us-south-3 --iops 1000
 ```
 {: pre}
 
