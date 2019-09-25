@@ -51,7 +51,6 @@ The following balanced profiles are available:
 | b2-16x64 | 16 | 64 | 32 |
 | b2-32x128 | 32  | 128 | 64 |
 | b2-48x192 | 48 | 192 | 80 |
-| b2-56x224 | 56 | 224 | 80 |
 {: caption="Table 2. Virtual server balanced profile options" caption-side="top"}
 
 ## Compute
@@ -86,10 +85,9 @@ The following memory profiles are available:
 | m2-8x64 | 8 | 64 | 16 |
 | m2-16x128 | 16 | 128 | 32 |
 | m2-32x256 | 32 | 256 | 64 |
-| m2-56x448 | 56 | 448 | 80 |
 {: caption="Table 4. Virtual server instance memory profile options" caption-side="top"}
 
-For all profile families, these supported operating systems are available: CentOS, Debian, and Ubuntu. 
+For all profile families, these supported operating systems are available: CentOS, Debian, Ubuntu and Windows. 
 
 For information about storage, see [Storage notes for profiles](#storage-notes-for-profiles). 
 
@@ -118,8 +116,8 @@ $ ibmcloud is instance-profiles
 
 When using the command line, the following information describes what the output represents. The profile sizes have different ratios of CPU to memory, designed for different workloads:
 
-*  "b" is balanced, which is a 1:2 or 1:4 ratio
-*  "c" is compute (higher on the CPUs) , which is a 1:1 ratio
+*  "b" is balanced, which is a 1:4 ratio
+*  "c" is compute (higher on the CPUs) , which is a 1:2 ratio
 *  “m” is memory (higher on the memory), which is a 1:8 ratio
 
 ## Storage notes for profiles
