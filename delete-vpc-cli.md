@@ -80,6 +80,14 @@ If the VPC you want to delete has multiple subnets, repeat these steps to delete
 ### Delete all network interfaces in the subnet, if any
 {: #deleting-nics-cli}
 
+To list all network interfaces of an instance, run the following command:
+
+```
+ibmcloud is instance-network-interfaces $vsi
+```
+{: pre}
+
+If a secondary network interface exists in the subnet you are trying to delete, you must delete the instance. A network interface cannot be deleted from the instance without deleting the instance.
 An instance can have multiple network interfaces, and those network interfaces can belong to multiple subnets of the VPC. Before a subnet can be deleted, any network interface in the subnet must first be deleted. 
 
 The only way to delete a network interface in a subnet is to delete the instance.
@@ -104,14 +112,6 @@ The status of the instance should change to `deleting` immediately, but it will 
 
 You can request other subnet resources to be deleted in parallel while waiting for the instance to be deleted. However, the subnet cannot be deleted until the instance and all other resources in the subnet no longer appear in the list query results.
 
-To list all network interfaces of an instance, run the following command:
-
-```
-ibmcloud is instance-network-interfaces $vsi
-```
-{: pre}
-
-If a secondary network interface exists in the subnet you are trying to delete, you must delete the instance. A network interface cannot be deleted from the instance without deleting the instance.
 
 ### Delete the subnet
 {: #deleting-subnet-cli}
