@@ -86,6 +86,15 @@ If the VPC you want to delete has multiple subnets, repeat the steps to delete e
 ### Delete all network interfaces in the subnet, if any
 {: #deleting-nics-api}
 
+To list all network interfaces of an instance, run the following command:
+
+```bash
+curl -X GET "$api_endpoint/v1/instances/$vsi/network_interfaces?version=$version&generation=2" \     
+     -H "Authorization:$iam_token"
+```
+{: pre}
+
+If a secondary network interface exists in the subnet you are trying to delete, you need to delete the instance. A network interface cannot be deleted from the instance without deleting the instance.
 An instance can have multiple network interfaces, and those network interfaces can belong to multiple subnets of the VPC. Before a subnet can be deleted, any network interface in the subnet must be deleted first. The only way to delete a network interface in a subnet is to delete the instance.
 
 To list all instances in your account, run the following command:
@@ -106,15 +115,6 @@ curl -X DELETE "$api_endpoint/v1/instances/$vsi?version=$version&generation=2" \
 
 The status of the instance should change to `deleting` immediately, but it still may be displayed in the results of a list query. The deletion of an instance can take up to 30 minutes. You can request other subnet resources to be deleted in parallel while waiting for the instance to be deleted, but the subnet cannot be deleted until the instance and all other resources in the subnet no longer appear in the list queries.
 
-To list all network interfaces of an instance, run the following command:
-
-```bash
-curl -X GET "$api_endpoint/v1/instances/$vsi/network_interfaces?version=$version&generation=2" \     
-     -H "Authorization:$iam_token"
-```
-{: pre}
-
-If a secondary network interface exists in the subnet you are trying to delete, you need to delete the instance. A network interface cannot be deleted from the instance without deleting the instance.
 
 ### Delete the subnet
 {: #deleting-subnet-api}
