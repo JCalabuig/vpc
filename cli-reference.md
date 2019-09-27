@@ -63,13 +63,13 @@ This document is organized into the following sections:
 
   If you have a federated account:
   ```
-  ibmcloud login -a api.ng.bluemix.net -sso
+  ibmcloud login -a cloud.ibm.com -sso
   ```
   {: codeblock}
 
   Otherwise, use the folowing command:
   ```
-  ibmcloud login -a api.ng.bluemix.net
+  ibmcloud login -a cloud.ibm.com
   ```
   {: codeblock}
 
